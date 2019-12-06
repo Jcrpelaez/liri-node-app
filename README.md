@@ -23,6 +23,8 @@ Created a Node Js bot, like iPhone's SIRI. However, LIRI is a _Language_ Interpr
 
 2. `node liri.js spotify-this-song <song name>`
 
+2019-12-03 19.23.10.gif
+
 - Shows the following information about the song in terminal/bash window.
 
   - Artist(s)
