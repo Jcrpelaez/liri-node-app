@@ -3,17 +3,14 @@ require("dotenv").config();
 var keys = require("./keys.js");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
+var fs = require("fs");
+var moment = require("moment");
 
-function movie() {
-  console.log("You are in the movie command");
-  var queryUrl = "" + value;
-  axios.get(queryUrl).then();
-}
 var getArtistNames = function(artist) {
   return artist.name;
 };
 
-var getMeSpotify = function(songName) {
+var searchSpotify = function(songName) {
   var spotify = new Spotify(keys.spotify);
 
   spotify.search({ type: "track", query: songName }, function(err, data) {
@@ -33,7 +30,7 @@ var getMeSpotify = function(songName) {
   });
 };
 
-var getMeMovie = function(movieName) {
+var searchMovie = function(movieName) {
   var queryUrl =
     "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
   axios.get(queryUrl).then(function(response) {
@@ -47,15 +44,34 @@ var getMeMovie = function(movieName) {
     console.log("Actors: " + response.data.Actors);
   });
 };
+function searchBandsInTown(artist) {
+  var queryUrl =
+    "https://rest.bandsintown.com/artists/" +
+    artist +
+    "/events?app_id=codingbootcamp";
+
+  axios.get(queryUrl).then(
+    function(events) {
+      console.log(JSON.stringify(events.dat, null, 2));
+    },
+    function(error) {
+      if (error) {
+        console.log(error);
+      }
+    }
+  );
+}
+
 var pick = function(caseData, functionData) {
   switch (caseData) {
     case "spotify-this-song":
-      getMeSpotify(functionData);
+      searchSpotify(functionData);
       break;
     case "movie-this":
-      getMeMovie(functionData);
+      searchMovie(functionData);
       break;
-    case "":
+    case "concert-this":
+      searchBandsInTown(functionData);
       break;
     default:
       console.log("LIRI does not know that");
