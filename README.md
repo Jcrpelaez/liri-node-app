@@ -23,14 +23,14 @@ Created a Node Js bot, like iPhone's SIRI. However, LIRI is a _Language_ Interpr
 
 2. `node liri.js spotify-this-song <song name>`
 
-2019-12-03 19.23.10.gif
-
 - Shows the following information about the song in terminal/bash window.
 
   - Artist(s)
   - The song's name
   - A preview link of the song from Spotify
   - The album that the song is from
+
+  https://github.com/Jcrpelaez/liri-node-app/blob/master/2019-12-03%2019.23.10.gif
 
 - Or if no song is passed through, it will default to
   \*"The Sign" by Ace of Base.
@@ -54,3 +54,12 @@ Created a Node Js bot, like iPhone's SIRI. However, LIRI is a _Language_ Interpr
 4. `node liri.js do-what-it-says`
 
 - Takes the text from random.txt and runs the song through spotify-this-song command
+
+## Technologies Used
+
+- [Spotify API](https://www.npmjs.com/package/node-spotify-api)
+- [Axios](https://www.npmjs.com/package/axios)
+- [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+- [Moment](https://www.npmjs.com/package/moment)
+- [DotEnv](https://www.npmjs.com/package/dotenv)
+- [Node.js](https://nodejs.org/en/)
