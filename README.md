@@ -30,8 +30,6 @@ Created a Node Js bot, like iPhone's SIRI. However, LIRI is a _Language_ Interpr
   - A preview link of the song from Spotify
   - The album that the song is from
 
-  < img src="images/Screen Shot 2019-12-09 at 10.45.02 AM.png">
-
 - Or if no song is passed through, it will default to "I want it that way"
 
 3. `node liri.js movie-this <movie name>`
